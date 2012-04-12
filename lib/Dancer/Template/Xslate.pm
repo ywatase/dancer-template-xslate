@@ -81,6 +81,21 @@ You can configure L<Text::Xslate>:
         module:
           - Text::Xslate::Bridge::TT2Like # to keep partial compatibility with Template Toolkit
 
+=head1 CASCADE
+
+Dancer already provides a CASCADE-like ability, which called a "layout". The
+reason is written on L<Dancer::Template::TemplateToolkit>
+
+If you might want to use CASCADE, you should turn off "layout" function.
+
+=over 4
+
+=item * Disable the layout in Dancer
+
+You can do this by simply commenting (or removing) the C<layout> configuration
+in the F<config.yml> file.
+
+=back
 
 =head1 SEE ALSO
 

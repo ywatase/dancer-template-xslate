@@ -1,12 +1,15 @@
 Revision history for Dancer-Template-Xslate
 
 {{$NEXT}}
+    - Fix bug involving conversion from "extension" to "suffix" options.
+    - Documented caveats involving Dancer's "layout" feature.
 
-0.02      2011-12-12 18:35:33 CST6CDT
-     - fix bug preventing templates with extensions other than "tt" from being found
-     - accept relative template paths
-     - fix MS Windows pathing bug
-     - don't use Dancer::Config directly
+0.02     2011-12-12 18:35:33 America/Chicago
+    - Fix bug preventing templates with extensions other than "tt" from being
+      found.
+    - Now accepting relative template paths
+    - Fixed MS Windows pathing bug.
+    - Stopped using Dancer::Config directly.
 
-0.01 Mon 2010-08-02 12:23:50 CEST
-     - initial release
+0.01     Mon 2010-08-02 12:23:50 CEST
+    - initial release

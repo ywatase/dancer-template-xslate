@@ -32,8 +32,10 @@ sub init {
     $self->config->{extension} = $xslate_args{suffix}
         if exists $xslate_args{suffix};
 
+    $self->config->{extension} =~ s/^\.//;
+
     ## avoid 'Text::Xslate: Unknown option(s): extension'
-    $xslate_args{suffix} = delete $xslate_args{extension}
+    $xslate_args{suffix} = '.' . delete $xslate_args{extension}
         if exists $xslate_args{extension};
 
     $self->{driver} = Text::Xslate->new(%xslate_args);

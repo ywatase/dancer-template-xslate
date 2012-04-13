@@ -81,21 +81,21 @@ You can configure L<Text::Xslate>:
         module:
           - Text::Xslate::Bridge::TT2Like # to keep partial compatibility with Template Toolkit
 
-=head1 CASCADE
+=head1 CAVEATS
 
-Dancer already provides a CASCADE-like ability, which called a "layout". The
-reason is written on L<Dancer::Template::TemplateToolkit>
+=head2 Cascading
 
-If you might want to use CASCADE, you should turn off "layout" function.
+Dancer already provides a <cascade>-like feature, called a "layout", in order
+to augment other template engines lacking such a feature. If you want to use
+Xslate's C<cascade>, turn off C<layout> by commenting out or removing the
+appropriate line in your Dancer config file.
 
-=over 4
+=head2 Smart HTML Escaping
 
-=item * Disable the layout in Dancer
-
-You can do this by simply commenting (or removing) the C<layout> configuration
-in the F<config.yml> file.
-
-=back
+Use of Dancer's C<layout> feature will cause HTML templates to be HTML-entity
+encoded twice if Xslate's "smart HTML escaping" feature is enabled. Xslate's
+C<type> option can be set to "text" to disable smart-escaping, or, once again,
+C<layout> can be disabled in favor of C<cascade>.
 
 =head1 SEE ALSO
 
